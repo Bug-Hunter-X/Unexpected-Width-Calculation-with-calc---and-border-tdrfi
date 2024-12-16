@@ -1,0 +1,19 @@
+The corrected CSS rule accounts for the border width within the `calc()` function:
+
+```css
+div {
+  box-sizing: border-box; /* Include padding and border in the element's total width */
+  width: calc(100% - 20px);
+  border: 10px solid black;
+}
+```
+
+Alternatively, you can explicitly include the border width in the calculation:
+
+```css
+div {
+  width: calc(100% - 40px); /* Subtract double the border width */
+  border: 10px solid black;
+}
+```
+Both solutions will correctly render the div with a 10px border, while maintaining the intended 100% width within the container. `box-sizing: border-box;` is generally a better practice for consistent layout.
